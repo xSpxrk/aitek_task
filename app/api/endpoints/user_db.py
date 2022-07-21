@@ -22,7 +22,7 @@ def create_user(
         user_in: schemas.UserCreate,
         db: Session = Depends(deps.get_db)
 ):
-    return crud.user.create(db=db, user_in=user_in)
+    return crud.user.create(db=db, obj_in=user_in)
 
 
 @router.put('/{user_id}', response_model=schemas.User)
